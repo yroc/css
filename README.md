@@ -10,3 +10,6 @@ Next there's the block formatting context (BFC) and inline formatting context (I
 An important concept in the VFM is that of containing block. Many box positions and sizes are calculated with respect to the edges of a rectangular box called a containing block. In general, generated boxes act as containing blocks for descendant boxes; we say that a box "establishes" the containing block for its descendants, and each box is given a position with respect to its containing block. Note: This doesn't imply that boxes are necessarily confined by their containing block; they may "overflow."
 
 Of course, the devil is in the details; it's nice to have this overall perspective, but you won't feel you understand any of this without knowing all the details -- the actual sizing and layout rules. Fasten your safety belt -- it's a long and bumpy ride!
+
+### Block formatting context
+In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top-left corner of their containing block.
