@@ -19,5 +19,5 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 ### Why do reset stylesheets tend not to reinitialize `display`?
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be one property where there is pretty much universal agreement: `div`s, `p`s, etc., should be `block` by default, `head` and its descendants should be `none` by default, etc.
 
-### Block formatting context
+## Block formatting context
 In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top-left corner of their containing block (`001BFM.html`, `001BFM.css`).
