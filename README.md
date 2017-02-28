@@ -23,3 +23,7 @@ As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/vi
 In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top-left corner of their containing block (`001BFM.html`, `001BFM.css`).
 
 The vertical distance between two sibling boxes is determined by the `margin-top` and `margin-bottom` (`002BFM.html`, `002BFM.css`).
+
+Definition: Suppose, hypothetically, that the adjoining margins of two or more boxes (which might or might not be siblings) combine to form a single margin. Margins that combine in this way are said to <dfn>collapse</dfn>, and the resulting combined margin is called a <dfn>collapsed margin</dfn>. When two or more margins collapse, the resulting margin width is the maximum of the collapsing margins&rsquo;s widths. In the case of negative margins, the maximum of the absolute values of the negative adjoining margins is deducted from the maximum of the positive adjoining margins. If there are no positive margins, the maximum of the absolute values of the adjoining margins is deducted from zero. [&sect;8.3.1 Collapsing margins](https://www.w3.org/TR/CSS22/box.html#collapsing-margins)
+
+Vertical margins between adjacent boxes collapse (`003BFM.html`, `003BFM.css`).
