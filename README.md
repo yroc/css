@@ -21,3 +21,5 @@ As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/vi
 
 ## Block formatting context
 In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top-left corner of their containing block (`001BFM.html`, `001BFM.css`).
+
+The vertical distance between two sibling boxes is determined by the `margin-top` and `margin-bottom` (`002BFM.html`, `002BFM.css`).
