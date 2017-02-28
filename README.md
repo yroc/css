@@ -1,6 +1,6 @@
 # How CSS Works
 
-## The Visual Formatting Model
+## The Visual Formatting Model ([&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
 The visual formatting model (VFM) is a set of rules that describe how the browser *visually* represents a document (as opposed to how a document is represented in memory).
 
 The important precursor to the VFM is the box model. The basic idea is that document elements (usually HTML elements  of an HTML document) are visually manifested as rectangular boxes (of course there are many details regarding the a box's structure, but that's the basic idea).
