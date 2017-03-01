@@ -9,12 +9,21 @@ A reset stylesheet is a stylesheet that *reinitializes* each CSS property (typic
 ### Why is it needed?
 As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#cascade) of CSS 2.2, &ldquo;Conforming user agents must apply a default style sheet (or behave as if they did).&rdquo;. The intention here is to give some basic styling to documents for which no accompanying style rules are provided. Thus, due to browsers&rsquo;s default styles, some CSS properties will no longer be set to their initial values. But for web authors who *do* provide their own styles, browsers&rsquo;s default styles may introduce unwanted and unexpected styling. Furthermore, because there&rsquo;s no guarantee that default stylesheets are consistent across browsers, resorting to default styles may result in styling inconsistencies between browsers.
 ### Why do reset stylesheets tend not to reinitialize `display`?
-As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc. 
+As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model.
 ### Box structure
-Each box has an innermost content area that contains its corresponding element&rsquo;s *data* (e.g., text, images) and descendant boxes. The content area is optionally surrounding by three rectangular frame areas. In order from inner to outer: the padding area, the border area, and the margin area.
+Each box consists of a rectangular content area that contains either descendant boxes or replaced data (e.g., images). The content area is *optionally* surrounding by three rectangular frame areas, in order from innermost to outermost: the padding area, the border area, and the margin area.
+
+The border area can be thought of as a picture frame; its purpose is to provide a decorative surrounding for the content area. The padding area can be thought of as picture matting; its purpose is to provide asthetic spacing between the content its border. The margin area can be thought of as interbox spacing; its purpose is to create spacing between sibling boxes and between siblings and their parent (containing) box.
+
+The outermost perimeter (outermost pixel elements) of each box area is known as the box&rsquo;s edge. Thus we have the content edge (aka inner edge), which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin edge (aka outer edge), which delimits the margin area.
+
+The width of the padding area, i.e., the number of padding pixels running perpendicularly from the content edge, is represented by the `padding` property. Furthermore, the widths of the top, right, bottom, and left segments of the padding area are individually represented by the properties `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` respectively, and can thus be individually determined.
+
+The width of the border area, i.e., the number of border pixels running perpendicularly from the padding edge (if extant, otherwise the content edge), is represented by the `border-width` property. Furthermore, the widths of the top, right, bottom, and left segments of the border area are individually represented by the properties `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` respectively, and can thus be individually determined.
+
 
 
 
