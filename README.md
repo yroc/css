@@ -21,6 +21,8 @@ As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/vi
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model.
+### Box structure
+Each box has an innermost content area that contains its corresponding element&rsquo;s *data* (e.g., text, images) and descendant boxes. The content area is optionally surrounding by three rectangular frame areas. In order from inner to outer: the padding area, the border area, and the margin area.
 
 ## Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
 In a block formatting context, boxes are laid out one after the other, vertically, in source order, beginning at the top-left corner of the inner (content) edge of their containing block. Each box&rsquo;s left outer (margin) edge touches the left inner (content) edge of its containing block (`001BFM.html`, `001BFM.css`). This is true even in the presence of floats (although a box&rsquo;s *line* boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).
