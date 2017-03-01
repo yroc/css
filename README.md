@@ -24,10 +24,10 @@ The width of the padding area, i.e., the number of padding pixels running perpen
 
 The width of the border area, i.e., the number of border pixels running perpendicularly from the padding edge (if extant, otherwise the content edge), is represented by the `border-width` property. Furthermore, the widths of the top, right, bottom, and left segments of the border area are individually represented by the properties `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` respectively, and can thus be individually determined.
 
+## Visual formatting model ([Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
 
 
-
-## Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
+### Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
 In a block formatting context, boxes are laid out one after the other, vertically, in source order, beginning at the top-left corner of the inner (content) edge of their containing block. Each box&rsquo;s left outer (margin) edge touches the left inner (content) edge of its containing block (`001BFM.html`, `001BFM.css`). This is true even in the presence of floats (although a box&rsquo;s *line* boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).
 
 The vertical distance between two sibling boxes is determined by the `margin-top` and `margin-bottom` (`002BFM.html`, `002BFM.css`).
