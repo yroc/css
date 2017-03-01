@@ -1,7 +1,7 @@
 # How CSS Works
 
 ## Overview
-At the heart of CSS are the [&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html) and the [&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html). These models consist of a set of rules that describe how the browsers represent documents *visually* (as opposed to how documents are represented/encoded in a computer&squo;s memory).
+At the heart of CSS are the [&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html) and the [&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html). These models consist of a set of rules that describe how the browsers represent documents *visually* (as opposed to how documents are represented/encoded in a computer&rsquo;s memory).
 
 ## About the Reset Stylesheet (`reset.css`)
 ### What is it?
