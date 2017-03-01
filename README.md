@@ -12,17 +12,40 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
-The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model.
+The CSS box model describes the rectangular boxes that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
 ### Box structure
+#### Content, padding, border, and margin areas and edges
 Each box consists of a rectangular content area that contains either descendant boxes or replaced data (e.g., images). The content area is *optionally* surrounding by three rectangular frame areas, in order from innermost to outermost: the padding area, the border area, and the margin area.
 
-The border area can be thought of as a picture frame; its purpose is to provide a decorative surrounding for the content area. The padding area can be thought of as picture matting; its purpose is to provide asthetic spacing between the content its border. The margin area can be thought of as interbox spacing; its purpose is to create spacing between sibling boxes and between siblings and their parent (containing) box.
+The border area is analogous to a picture frame; its purpose is to provide decorative surrounding to the content area. The padding area is analogous to picture matting; its purpose is to provide asthetic spacing between the content and the border. The margin area can be thought of as interbox spacing; its purpose is to create spacing between sibling boxes and between siblings and their parent (containing) box.
 
-The outermost perimeter (outermost pixel elements) of each box area is known as the box&rsquo;s edge. Thus we have the content edge (aka inner edge), which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin edge (aka outer edge), which delimits the margin area.
+The padding, border, and margin areas each consist of four individual segments: the top segment, the right segment, the bottom segment, and the left segment.
 
-The width of the padding area, i.e., the number of padding pixels running perpendicularly from the content edge, is represented by the `padding` property. Furthermore, the widths of the top, right, bottom, and left segments of the padding area are individually represented by the properties `padding-top`, `padding-right`, `padding-bottom`, and `padding-left` respectively, and can thus be individually determined.
+The outermost pixel elements of each box area is known as that box&rsquo;s edge. Thus we have the content edge (aka inner edge), which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin edge (aka outer edge), which delimits the margin area.
 
-The width of the border area, i.e., the number of border pixels running perpendicularly from the padding edge (if extant, otherwise the content edge), is represented by the `border-width` property. Furthermore, the widths of the top, right, bottom, and left segments of the border area are individually represented by the properties `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` respectively, and can thus be individually determined.
+#### Content area width, height, and color
+The content area width is defined as the number of content pixels running horizontally from the content area&rsquo;s left edge to the content area&rsquo;s right edge, inclusive. A content area&rsquo;s width is, inter alia, controlled by the `width` property.
+
+The content area height is defined as the number of content pixels running vertically from the content area&rsquo;s top edge to the content area&rsquo;s bottom edge, inclusive. A content area&rsquo;s height is, inter alia, controlled by the `height` property.
+
+#### Padding width and color
+The width of each segment of the padding area is defined as the number of padding pixels running perpendicularly from a content edge to its respective padding edge, excluding the content edge itself. The widths of the top, right, bottom, and left segments of the padding area are individually represented by the properties `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. All four padding area segments are collectively represented by the `padding` property.
+
+Padding color determinants?
+
+#### Border width, color, and style
+The width of each segment of the border area is defined as the number of border pixels running perpendicularly from a padding edge (if extant, otherwise a content edge) to its respective border edge, excluding the padding edge (or content edge) itself. The widths of the top, right, bottom, and left segments of the border area are represented by the `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` properties respectively.
+
+The colors of the top, right, bottom, and left segments of the border area are represented by the `border-top-color`, `border-right-color`, `border-bottom-color`, and `border-left-color` properties respectively.
+
+#### Margin width and color
+The width of the margin area, i.e., the number of margin pixels running perpendicularly from the border edge (if extant, otherwise the padding edge, if extant, otherwise the content edge), is represented by the `margin` property. Furthermore, with widths of the top, right, bottom, and left segments of the margin area are individually represented by the properties `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` respectively, and can thus be individually set.
+
+The margin area is always transparent and has no color property that represent it.
+
+#### Box types
+block-level, inline-level, block, inline, &c.
+
 
 ## Visual formatting model ([&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
 
