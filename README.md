@@ -24,7 +24,7 @@ The width of the padding area, i.e., the number of padding pixels running perpen
 
 The width of the border area, i.e., the number of border pixels running perpendicularly from the padding edge (if extant, otherwise the content edge), is represented by the `border-width` property. Furthermore, the widths of the top, right, bottom, and left segments of the border area are individually represented by the properties `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` respectively, and can thus be individually determined.
 
-## Visual formatting model ([Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
+## Visual formatting model ([&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
 
 
 ### Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
