@@ -1,15 +1,7 @@
 # How CSS Works
 
-## The Visual Formatting Model ([&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
-The visual formatting model (VFM) is a set of rules that describe how the browser *visually* represents a document (as opposed to how a document is represented in memory).
-
-The important precursor to the VFM is the box model. The basic idea is that document elements (usually HTML elements  of an HTML document) are visually manifested as rectangular boxes (of course there are many details regarding the a box's structure, but that's the basic idea).
-
-Next there's the block formatting context (BFC) and inline formatting context (IFC), which are rules that determine boxes&rsquo; dimensions (width and height) and how the boxes are laid out relative to one another.
-
-An important concept in the VFM is that of containing block. Many box positions and sizes are calculated with respect to the edges of a rectangular box called a containing block. In general, generated boxes act as containing blocks for descendant boxes; we say that a box "establishes" the containing block for its descendants, and each box is given a position with respect to its containing block. Note: This doesn't imply that boxes are necessarily confined by their containing block; they may "overflow."
-
-Of course, the devil is in the details; it's nice to have this overall perspective, but you won't feel you understand any of this without knowing all the details -- the actual sizing and layout rules. Fasten your safety belt&mdash;it's a long and bumpy ride!
+## Overview
+At the heart of CSS are the [&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html) and the [&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html). These models consist of a set of rules that describe how the browsers represent documents *visually* (as opposed to how documents are represented/encoded in a computer&squo;s memory).
 
 ## About the Reset Stylesheet (`reset.css`)
 ### What is it?
@@ -23,6 +15,8 @@ As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/vi
 The CSS box model describes the rectangular boxes that are generated for elements in the document tree and laid out according to the visual formatting model.
 ### Box structure
 Each box has an innermost content area that contains its corresponding element&rsquo;s *data* (e.g., text, images) and descendant boxes. The content area is optionally surrounding by three rectangular frame areas. In order from inner to outer: the padding area, the border area, and the margin area.
+
+
 
 ## Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
 In a block formatting context, boxes are laid out one after the other, vertically, in source order, beginning at the top-left corner of the inner (content) edge of their containing block. Each box&rsquo;s left outer (margin) edge touches the left inner (content) edge of its containing block (`001BFM.html`, `001BFM.css`). This is true even in the presence of floats (although a box&rsquo;s *line* boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).
