@@ -12,13 +12,22 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
 ## The Viewport
-The viewport, one of the major components of a browser, is a transparent rectangular window through which the user consults a browser-rendered document. It is the layer closest to the user, immediately in front of the canvas (sits between the user and the canvas).
+The <dfn>viewport<dfn>, one of the major components of a browser, is a transparent rectangular window through which the user consults a browser-rendered document. It is the layer closest to the user, immediately in front of the canvas (sits between the user and the canvas).
 
 The viewport&rsquo;s dimensions are user-adjustable (though it will always be rectangular). Its dimensions will be reduced by the presence of any browser chrome (tabs, menu bar, scroll bar, status bar, bookmark buttons, side framing, &c.). Theoretically, the maximum dimensions of the viewport would be equal to the dimensions of the computer display (screen) itself (this is in contrast to the canvas, whose dimensions are not necessarily confined to the screen).
 
 When the dimensions of canvas exceed the dimensions of the viewport, the web browser should provide a scrolling mechanism that, when activated, moves the canvas horizontally and vertically such that any part of the canvas (upon which the document is rendered) can be brought in view.
 
 It is to be emphasized that the scrolling mechanism moves the canvas, not the viewport; the viewport is always fixed in space.
+
+## The Canvas
+The <dfn>canvas</dfn>, one of the major components of a browser, is a two-dimensional rectangular array of visuospatial elements (could be referred to as "pixels"&mdash;but not necessarily physical *screen* pixels) dedicated to document rendering (usually HTML documents).
+
+Each canvas element has a unique position and is capable of producing one or more (usually millions of) colors. By virtue of these basic properties, the canvas is able to represent documents visually, and it is in this sense that the canvas is said to be the &ldquo;medium&rdquo; upon which or by which a document is visually rendered. Another way of saying this is that each distinct document is a particular *state* of the canvas.
+
+The CSS 2.2 specification, [&sect;2.3.1 The canvas](https://www.w3.org/TR/CSS22/intro.html#the-canvas), describes the canvas as “infinite” for each dimension of the space. In practical terms, this means that the canvas is guaranteed (contracted in the specification) to expand as necessary to accommodate the entirety of the spatial rendering of the document (as specified by the box model, visual formatting model, &c.), whatever its final dimensions. At a minimum, the canvas is equal in size to the the viewport. This means that in the case that the rendered document is smaller than the viewport, the canvas dimensions will exceed those of the document.
+
+When not representing a document (i.e., when there is no open document), the canvas is transparent. In this case, the browser backing&mdash;a component of the browser chrome&mdash;will shine through.
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the boxes (rectangular in shape by default) that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
