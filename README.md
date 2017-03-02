@@ -11,6 +11,15 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 ### Why do reset stylesheets tend not to reinitialize `display`?
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
+## The Viewport
+The viewport, one of the major components of a browser, is a transparent rectangular window through which the user consults a browser-rendered document. It is the layer closest to the user, immediately in front of the canvas (sits between the user and the canvas).
+
+The viewport&rsquo;s dimensions are user-adjustable (though it will always be rectangular). Its dimensions will be reduced by the presence of any browser chrome (tabs, menu bar, scroll bar, status bar, bookmark buttons, side framing, &c.). Theoretically, the maximum dimensions of the viewport would be equal to the dimensions of the computer display (screen) itself (this is in contrast to the canvas, whose dimensions are not necessarily confined to the screen).
+
+When the dimensions of canvas exceed the dimensions of the viewport, the web browser should provide a scrolling mechanism that, when activated, moves the canvas horizontally and vertically such that any part of the canvas (upon which the document is rendered) can be brought in view.
+
+It is to be emphasized that the scrolling mechanism moves the canvas, not the viewport; the viewport is always fixed in space.
+
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the boxes (rectangular in shape by default) that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
 ### Box structure
