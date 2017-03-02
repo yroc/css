@@ -12,16 +12,19 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
-The CSS box model describes the rectangular boxes that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
+The CSS box model describes the boxes (rectangular in shape by default) that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
 ### Box structure
 #### Content, padding, border, and margin areas and edges
-Each box consists of a rectangular content area that contains either descendant boxes or replaced data (e.g., images). The content area is *optionally* surrounding by three rectangular frame areas, in order from innermost to outermost: the padding area, the border area, and the margin area.
+Each box consists of a content area, rectangular in shape by default, that contains either text, zero or more descendant boxes, or replaced data (e.g., an image). The content area is *optionally* framed by&mdash;from innermost to outermost&mdash;a padding area, and/or a border area, and/or a margin area.
 
 The border area is analogous to a picture frame; its purpose is to provide decorative surrounding to the content area. The padding area is analogous to picture matting; its purpose is to provide asthetic spacing between the content and the border. The margin area can be thought of as interbox spacing; its purpose is to create spacing between sibling boxes and between siblings and their parent (containing) box.
 
 The padding, border, and margin areas each consist of four individual segments: the top segment, the right segment, the bottom segment, and the left segment.
 
-The outermost pixel elements of each box area is known as that box&rsquo;s edge. Thus we have the content edge (aka inner edge), which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin edge (aka outer edge), which delimits the margin area.
+The outermost pixel elements of each box area is known as that box&rsquo;s edge. Thus we have the content (aka inner) edge, which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin (aka outer) edge, which delimits the margin area.
+
+#### Box types
+block-level, inline-level, block, inline, &c.
 
 #### Content area width, height, and color
 The content area width is defined as the number of content pixels running horizontally from the content area&rsquo;s left edge to the content area&rsquo;s right edge, inclusive. A content area&rsquo;s width is, inter alia, controlled by the `width` property.
@@ -43,8 +46,6 @@ The width of the margin area, i.e., the number of margin pixels running perpendi
 
 The margin area is always transparent and has no color property that represent it.
 
-#### Box types
-block-level, inline-level, block, inline, &c.
 
 
 ## Visual formatting model ([&sect;9 Visual formatting model](https://www.w3.org/TR/CSS22/visuren.html))
