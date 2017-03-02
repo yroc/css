@@ -40,11 +40,11 @@ Each box in the box model is of one of the following three types:
 
 A box&rsquo;s type determines how it is (or can be) sized and to which set of formatting rules it obeys.
 
-<dfn>Block-level boxes</dfn> are boxes that participate in block formatting contexts. They are generated from <dfn>block-level elements</dfn>&mdash;elements whose `display` property is set to `block`, `list-item`, or `table`.
+<dfn>Block-level boxes</dfn> are boxes that, under &ldquo;normal&rdquo; circumstances, obey a set of formatting rules called a block formatting context. They are generated from <dfn>block-level elements</dfn>&mdash;elements whose `display` property is set to `block` (in HTML, the elements `html`, `body`, `p`, `address`, `article`, `aside`, `div`, `header`, `footer`, `hgroup`, `layer`, `main`, `nav`, `section`, `blockquote`, `figure`, `figcaption`, `hr`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`), `list-item`, or `table`.
 
-<dfn>Inline-level boxes</dfn> are boxes that participate in inline formatting contexts. They are generated from <dfn>inline-level elements</dfn>&mdash;elements whose `display` property is set to `inline`, `inline-block`, or `inline-table`.
+<dfn>Inline-level boxes</dfn> are boxes that, under &lsquo;normal&rdquo; circumstances, obey a set of formatting rules called an inline formatting context. They are generated from <dfn>inline-level elements</dfn>&mdash;elements whose `display` property is set to `inline`, `inline-block`, or `inline-table`.
 
-<dfn>Table-level boxes</dfn> are boxes that participate in table formatting contexts. They are generated from <dfn>table-level elements</dfn>&mdash;elements whose `display` property is set to `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-column-group`, `table-column`, `table-cell`, or `table-caption`.
+<dfn>Table-level boxes</dfn> are boxes that obey table formatting contexts. They are generated from <dfn>table-level elements</dfn>&mdash;elements whose `display` property is set to `table-row-group` (in HTML, the `tbody` element), `table-header-group` (in HTML, the `thead` element), `table-footer-group` (in HTML, the `tfoot` element), `table-row` (in HTML, the `tr` element), `table-column-group` (in HTML, the `colgroup` element), `table-column` (in HTML, the `col` element), `table-cell` (in HTML, the `td` and `th` elements), or `table-caption` (in HTML, the `caption` element).
 
 ### Box structure
 #### Content, padding, border, and margin areas and edges
