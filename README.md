@@ -31,6 +31,21 @@ When not representing a document (i.e., when there is no open document), the can
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the boxes (rectangular in shape by default) that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
+#### Box type
+Each box in the box model is of one of the following three types:
+
+1. Block-level
+2. Inline-level
+3. Table-level
+
+A box&rsquo;s type determines how it is (or can be) sized and to which set of formatting rules it obeys.
+
+<dfn>Block-level boxes</dfn> are boxes that participate in block formatting contexts. They are generated from <dfn>block-level elements</dfn>&mdash;elements whose `display` property is set to `block`, `list-item`, or `table`.
+
+<dfn>Inline-level boxes</dfn> are boxes that participate in inline formatting contexts. They are generated from <dfn>inline-level elements</dfn>&mdash;elements whose `display` property is set to `inline`, `inline-block`, or `inline-table`.
+
+<dfn>Table-level boxes</dfn> are boxes that participate in table formatting contexts. They are generated from <dfn>table-level elements</dfn>&mdash;elements whose `display` property is set to `table-row-group`, `table-header-group`, `table-footer-group`, `table-row`, `table-column-group`, `table-column`, `table-cell`, or `table-caption`.
+
 ### Box structure
 #### Content, padding, border, and margin areas and edges
 Each box consists of a content area, rectangular in shape by default, that contains either text, zero or more descendant boxes, or replaced data (e.g., an image). The content area is *optionally* framed by&mdash;from innermost to outermost&mdash;a padding area, and/or a border area, and/or a margin area.
@@ -40,9 +55,6 @@ The border area is analogous to a picture frame; its purpose is to provide decor
 The padding, border, and margin areas each consist of four individual segments: the top segment, the right segment, the bottom segment, and the left segment.
 
 The outermost pixel elements of each box area is known as that box&rsquo;s edge. Thus we have the content (aka inner) edge, which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin (aka outer) edge, which delimits the margin area.
-
-#### Box types
-block-level, inline-level, block, inline, &c.
 
 #### Content area width, height, and color
 The content area width is defined as the number of content pixels running horizontally from the content area&rsquo;s left edge to the content area&rsquo;s right edge, inclusive. A content area&rsquo;s width is, inter alia, controlled by the `width` property.
@@ -70,6 +82,8 @@ The margin area is always transparent and has no color property that represent i
 
 
 ### Block formatting context ([&sect;9.4.1 Block formatting contexts](https://www.w3.org/TR/CSS22/visuren.html#block-formatting))
+A block formatting context is a set of formatting rules that apply to block-level boxes.
+
 In a block formatting context, boxes are laid out one after the other, vertically, in source order, beginning at the top-left corner of the inner (content) edge of their containing block. Each box&rsquo;s left outer (margin) edge touches the left inner (content) edge of its containing block (`001BFM.html`, `001BFM.css`). This is true even in the presence of floats (although a box&rsquo;s *line* boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself may become narrower due to the floats).
 
 The vertical distance between two sibling boxes is determined by the `margin-top` and `margin-bottom` (`002BFM.html`, `002BFM.css`).
