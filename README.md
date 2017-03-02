@@ -31,7 +31,7 @@ When not representing a document (i.e., when there is no open document), the can
 
 ## Box model ([&sect;8 Box model](https://www.w3.org/TR/CSS22/box.html))
 The CSS box model describes the boxes (rectangular in shape by default) that are generated for elements in the document tree (and subsequently laid out according to the visual formatting model).
-#### Box type
+### Box type
 Each box in the box model is of one of the following three types:
 
 1. Block-level
