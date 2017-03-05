@@ -13,11 +13,12 @@ As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/vi
 
 ## Browser structure
 The browser consists of three major components:
+
 1. browser chrome
 2. the viewport
 3. the canvas
 
-### Browser Chrome
+### Browser chrome
 
 ### The Viewport
 The <dfn>viewport<dfn>, one of the major components of a browser, is a transparent rectangular window through which the user consults a browser-rendered document. It is the layer closest to the user, immediately in front of the canvas (sits between the user and the canvas).
