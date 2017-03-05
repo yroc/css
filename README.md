@@ -11,7 +11,15 @@ As stated in [&sect;6.4 The cascade](https://www.w3.org/TR/CSS22/cascade.html#ca
 ### Why do reset stylesheets tend not to reinitialize `display`?
 As stated in [&sect;9.2.4 The 'display' property](https://www.w3.org/TR/CSS22/visuren.html#display-prop) of CSS 2.2, &ldquo;&hellip;although the initial value of `display` is `inline`, rules in the user agent&rsquo;s default style sheet may override this value.&rdquo; `display` defaults just happen to be the one property where there is pretty much universal agreement on which HTML element should be set to which values; `div`s, `p`s, etc., should be `block`, `li` should be `list-item`, `head` and its descendants should be `none`, etc.
 
-## The Viewport
+## Browser structure
+The browser consists of three major components:
+1. browser chrome
+2. the viewport
+3. the canvas
+
+### Browser Chrome
+
+### The Viewport
 The <dfn>viewport<dfn>, one of the major components of a browser, is a transparent rectangular window through which the user consults a browser-rendered document. It is the layer closest to the user, immediately in front of the canvas (sits between the user and the canvas).
 
 The viewport&rsquo;s dimensions are user-adjustable (though it will always be rectangular). Its dimensions will be reduced by the presence of any browser chrome (tabs, menu bar, scroll bar, status bar, bookmark buttons, side framing, &c.). Theoretically, the maximum dimensions of the viewport would be equal to the dimensions of the computer display (screen) itself (this is in contrast to the canvas, whose dimensions are not necessarily confined to the screen).
@@ -20,7 +28,7 @@ When the dimensions of canvas exceed the dimensions of the viewport, the web bro
 
 It is to be emphasized that the scrolling mechanism moves the canvas, not the viewport; the viewport is always fixed in space.
 
-## The Canvas
+### The Canvas
 The <dfn>canvas</dfn>, one of the major components of a browser, is a two-dimensional rectangular array of visuospatial elements (could be referred to as "pixels"&mdash;but not necessarily physical *screen* pixels) dedicated to document rendering (usually HTML documents).
 
 Each canvas element has a unique position and is capable of producing one or more (usually millions of) colors. By virtue of these basic properties, the canvas is able to represent documents visually, and it is in this sense that the canvas is said to be the &ldquo;medium&rdquo; upon which or by which a document is visually rendered. Another way of saying this is that each distinct document is a particular *state* of the canvas.
@@ -52,29 +60,23 @@ Each box consists of a content area, rectangular in shape by default, that conta
 
 The border area is analogous to a picture frame; its purpose is to provide decorative surrounding to the content area. The padding area is analogous to picture matting; its purpose is to provide asthetic spacing between the content and the border. The margin area can be thought of as interbox spacing; its purpose is to create spacing between sibling boxes and between siblings and their parent (containing) box.
 
-The padding, border, and margin areas each consist of four individual segments: the top segment, the right segment, the bottom segment, and the left segment.
-
 The outermost pixel elements of each box area is known as that box&rsquo;s edge. Thus we have the content (aka inner) edge, which delimits the content area, the padding edge, which delimits the padding area, the border edge, which delimits the border area, and the margin (aka outer) edge, which delimits the margin area.
 
-#### Content area width, height, and color
+The padding, border, and margin areas each consist of four individual segments: the top segment, the right segment, the bottom segment, and the left segment. In order that the edges of the four segments are equal in length, segments are trapezoidal, *not* rectangular, in shape.
+
+#### Content area width and height
 The content area width is defined as the number of content pixels running horizontally from the content area&rsquo;s left edge to the content area&rsquo;s right edge, inclusive. A content area&rsquo;s width is, inter alia, controlled by the `width` property.
 
 The content area height is defined as the number of content pixels running vertically from the content area&rsquo;s top edge to the content area&rsquo;s bottom edge, inclusive. A content area&rsquo;s height is, inter alia, controlled by the `height` property.
 
-#### Padding width and color
+#### Padding width
 The width of each segment of the padding area is defined as the number of padding pixels running perpendicularly from a content edge to its respective padding edge, excluding the content edge itself. The widths of the top, right, bottom, and left segments of the padding area are individually represented by the properties `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. All four padding area segments are collectively represented by the `padding` property.
 
-Padding color determinants?
-
-#### Border width, color, and style
+#### Border width
 The width of each segment of the border area is defined as the number of border pixels running perpendicularly from a padding edge (if extant, otherwise a content edge) to its respective border edge, excluding the padding edge (or content edge) itself. The widths of the top, right, bottom, and left segments of the border area are represented by the `border-top-width`, `border-right-width`, `border-bottom-width`, and `border-left-width` properties respectively.
 
-The colors of the top, right, bottom, and left segments of the border area are represented by the `border-top-color`, `border-right-color`, `border-bottom-color`, and `border-left-color` properties respectively.
-
-#### Margin width and color
+#### Margin width
 The width of the margin area, i.e., the number of margin pixels running perpendicularly from the border edge (if extant, otherwise the padding edge, if extant, otherwise the content edge), is represented by the `margin` property. Furthermore, with widths of the top, right, bottom, and left segments of the margin area are individually represented by the properties `margin-top`, `margin-right`, `margin-bottom`, and `margin-left` respectively, and can thus be individually set.
-
-The margin area is always transparent and has no color property that represent it.
 
 
 
